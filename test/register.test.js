@@ -20,6 +20,8 @@ describe('Users', () => {
             expect(response.body.username).to.equal(bodyRegister.username);
             expect(response.body.favorecidos).to.be.an('array');
             expect(response.body.favorecidos).to.deep.equal(['']);
+            expect(response.body.saldo).to.be.a('number');
+            expect(response.body.saldo).to.equal(10000);
         })
     })
 })
