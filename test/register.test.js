@@ -38,5 +38,18 @@ describe('Users', () => {
             expect(response.status).to.equal(400);
             expect(response.body.error).to.equal('Usuário já existe');
         })
+
+        it('Deve retornar 400 - Usuário e senha obrigatórios - quando deixo de informar o valor de username e/ou password', async () => {
+            const bodyRegister = { ...postRegister };
+            bodyRegister.username = "";
+
+            const response = await request(process.env.BASE_URL)
+                .post('/users/register')
+                .set('Content-Type', 'application/json')
+                .send(bodyRegister);
+            
+            expect(response.status).to.equal(400);
+            expect(response.body.error).to.equal('Usuário e senha obrigatórios');
+        })
     })
 })
