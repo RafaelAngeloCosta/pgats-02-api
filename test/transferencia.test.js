@@ -18,7 +18,6 @@ describe('Realizar transferência', () => {
 
         before(async () => {
             token = await obterToken('julio', '123456')
-            console.log("AAAAAAAA", token)
         })
 
 
