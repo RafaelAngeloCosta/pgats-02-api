@@ -9,7 +9,7 @@ const obterToken = async (usuario, senha) => {
     const response = await request(process.env.BASE_URL)
         .post('/users/login')
         .set('Content-Type', 'application/json')
-        .send({bodyLogin})
+        .send(bodyLogin)
 
     console.log(response.body.token)
     return response.body.token
